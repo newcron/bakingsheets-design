@@ -1,0 +1,150 @@
+/*
+ Defaults
+
+ Styleguide 1
+ */
+
+
+html {
+  font-size: 16px;
+}
+
+body {
+  &:extend(.-normal-font-family);
+
+}
+
+.-normal-font-family {
+  font-family: Helvetica, Calibri, Verdana, sans-serif;
+}
+
+/*
+Headlines
+
+Normal designs for headlines
+
+markup:
+<{$modifiers}>Headline {$modifiers}</{$modifiers}>
+
+h1 - h1 headline
+h2 - h2 headline
+h3 - h3 headline
+h4 - h4 headline
+h5 - h5 headline
+h6 - h6 headline
+
+Styleguide 1.1
+*/
+
+
+/*
+Renderas Headlines
+
+Headlines that look like headlines from a different type (all below headlines are H1 elements but they are made to look like a different headline
+
+markup:
+<h6 class="{$modifiers}">H6 Headline rendered as {$modifiers}</h6>
+
+h1 - render as h1 headline
+h2 - render as h2 headline
+h3 - render as h3 headline
+h4 - render as h4 headline
+h5 - render as h5 headline
+h6 - render as h6 headline
+
+Styleguide 1.10
+*/
+
+/*
+Embossing Headlines
+
+markup
+<h4 class="an-embossed-headline">headline embossed</h4>
+
+Styleguide 1.15
+*/
+
+h1, .h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+h2, .h2 {
+  font-size: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+h3, .h3 {
+  font-size: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+h4, .h4, h5, .h5, h6, .h6 {
+  font-size: 1rem;
+}
+
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6{
+  line-height: 1.4em;
+  padding: 0;
+  margin: 2rem 0 0 0;
+  font-family: @header_font;
+  font-weight: 700;
+
+  &.an-embossed-headline {
+    text-shadow: 0px 1px @pale_pink;
+  }
+}
+
+/*
+Paragraphs
+
+Normal Paragraphs
+
+markup:
+<p>first paragraph</p><p>second paragraph</p>
+
+Styleguide 1.20
+*/
+
+p {
+  line-height: 1.35rem;
+}
+
+
+
+/*
+Links
+
+Links
+
+markup:
+<a href="#" class="{$modifiers}">Link text</a>
+
+.an-unnoticable-link - unnoticable (in black color)
+
+Styleguide 1.30
+*/
+
+a {
+  color: @pale_pink;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+a.an-unnoticable-link {
+  color: black;
+  &:hover{
+    color: @pale_pink;
+
+  }
+}
+

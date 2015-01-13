@@ -1,0 +1,46 @@
+/*
+baking sheets main file
+*/
+
+@pale_yellow: #fffde3;
+@light_brown: #b88750;
+@dark_brown: #6d382e;
+@pale_pink: #f8aeb9;
+@pale_green: #e1efd1;
+
+@main_content_width: 960px;
+
+@header_font: 'Droid Serif', serif;
+
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700);
+
+body {
+  background: white;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  padding: 0 20px 0 20px;
+  &:extend(.-main-content-width);
+}
+
+
+.-main-content-width {
+  max-width: @main_content_width;
+  margin: auto;
+}
+
+
+@import "layout";
+@import "normalize";
+@import "icons";
+@import "itempreview";
+@import "itemdetails";
+@import "articletile";
+@import "menubox";
+@import "navigation";
+@import "header";
+@import "footer";
+@import "externals";

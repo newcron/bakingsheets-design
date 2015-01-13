@@ -1,0 +1,35 @@
+/*
+Footer
+
+normal page footer
+
+markup:
+<footer class="footer">
+  <p class="footer-blogtitle"><strong class="footer-blogtitle-em">Bakingsheets.</strong> Keep Calm and bake on.</p>
+  <p class="footer-copyright">&copy; 2014 - 2015 Bakingsheets. All rights reserved.</p>
+</footer>
+
+.footer - default
+
+Styleguide 200
+*/
+
+.footer {
+  margin-top: 3rem;
+  background: @dark_brown;
+  border-top: 1px dotted @pale_pink;
+  outline: 1px solid @dark_brown;
+  color: white;
+
+  .footer-blogtitle {
+    &:extend(.-main-content-width);
+
+    .footer-blogtitle-em {
+      color: @pale_pink;
+    }
+  }
+  .footer-copyright {
+    &:extend(.-main-content-width);
+
+  }
+}

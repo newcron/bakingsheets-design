@@ -1,0 +1,84 @@
+/*
+Menubox
+
+Menubox for the sidebar
+
+markup:
+<section class="menubox {$modifiers}">
+  <h3 class="menubox-head">Title of the menubox</h3>
+  <ul class="menubox-content">
+    <li><a href="#">Menu item 1</a></li>
+    <li><a href="#">Menu item 2</a></li>
+    <li><a href="#">Menu item 3</a></li>
+  </ul>
+</section>
+
+.a-teasered - a teasered menubox
+.a-centered - a centered menubox
+Styleguide 60
+*/
+
+.menubox {
+
+  &.a-teasered .menubox-content{
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  &.a-centered .menubox-content {
+    text-align: center;
+  }
+
+  text-align: center;
+
+  &:before {
+    content: "";
+    height: 1px;
+    display: block;
+    background: @pale_pink;
+    position: relative;
+    top: 0.7rem;
+    z-index: -1;
+  }
+
+  & > .menubox-head {
+
+    font-size: 1rem;
+    margin: 0px;
+    font-weight: normal;
+    display: inline-block;
+    padding: 0 0.4rem;
+    background: white;
+    z-index: 2;
+  }
+
+  & > .menubox-content {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    padding-top: 1rem;
+    font-size: 0.9rem;
+    top: -0.6rem;
+    list-style-type: none;
+
+    & a {
+      color: @pale_pink;
+    }
+
+    /** fixes default wordpress theme for widgets*/
+    & > ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    & li:nth-child(n+2):before{
+      content: "";
+      border-top: 1px solid @pale_green;
+      display: block;
+      margin: 0.8rem 38%;
+    }
+  }
+
+
+}

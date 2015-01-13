@@ -1,0 +1,138 @@
+/*
+  Itempreview
+
+  Styleguide 40
+*/
+
+/*
+Itempreview without image
+
+Item preview in blog list
+
+markup:
+<article class="itempreview">
+    <header>
+        <div class="itempreview-time">
+          <time>18.12.2014</time>
+        </div>
+        <h3 class="h1 itempreview-title">
+            <a href="#">
+                All I want for Christmas is cake (Bratapfelkuchen mit Marzipan)
+            </a>
+        </h3>
+    </header>
+    <p class="itempreview-excerpt">
+        Frohe Weihnachten zusammen! Ich hoffe ihr genießt die Feiertage und könnt sie mit den Menschen verbringen, die ihr liebt. Mein Baum ist seit heute Morgen geschmückt und verbreitet ordentlich Weihnachtsstimmung.  Es hängen dieses Jahr sogar erstmalig Süßigkeit daran – allerdings keine selbst gemachten. Bevor ich mich wieder ins weihnachtliche Getümmel stürze, will ich euch von meiner …
+    </p>
+    <p class="itempreview-readon">
+      <a href="#">Weiterlesen</a>
+    </p>
+    <aside>
+        Aus <a href="#">Baking</a>, Tags: <a href="#">Nuss</a>, <a href="#">Baum</a>, <a href="#">Bar</a>
+    </aside>
+</article>
+
+
+Styleguide 40.10
+*/
+
+/*
+Itempreview with image
+
+markup:
+<article class="itempreview">
+  <header>
+      <div class="itempreview-time">
+        <time>18.12.2014</time>
+      </div>
+      <h3 class="h1 itempreview-title">
+          <a href="#">
+              All I want for Christmas is cake (Bratapfelkuchen mit Marzipan)
+          </a>
+      </h3>
+  </header>
+  <p class="itempreview-excerpt">
+      <img src="public/dummy-image.jpg" class="itempreview-excerpt-teaserimg">
+      Frohe Weihnachten zusammen! Ich hoffe ihr genießt die Feiertage und könnt sie mit den Menschen verbringen, die ihr liebt. Mein Baum ist seit heute Morgen geschmückt und verbreitet ordentlich Weihnachtsstimmung.  Es hängen dieses Jahr sogar erstmalig Süßigkeit daran – allerdings keine selbst gemachten. Bevor ich mich wieder ins weihnachtliche Getümmel stürze, will ich euch von meiner …
+  </p>
+  <p class="itempreview-readon">
+    <a href="#">Weiterlesen</a>
+  </p>
+  <aside>
+      Aus <a href="#">Baking</a>, Tags: <a href="#">Nuss</a>, <a href="#">Baum</a>, <a href="#">Bar</a>
+  </aside>
+</article>
+
+Styleguide 40.20
+*/
+
+.itempreview {
+
+  header {
+
+    .itempreview-title {
+
+      margin: 0;
+      background: @pale_green;
+      padding: 0.2rem;
+
+      text-shadow: 0 1px @dark_brown;
+    }
+
+
+
+    .itempreview-time {
+      text-align: center;
+      font-size: 1rem;
+      padding: 0;
+      font-family: @header_font;
+      text-align: center;
+
+      &:before, &:after {
+        content: "";
+        display: inline-block;
+        width: 6rem;
+        height: 1px;
+        background: @pale_green;
+        vertical-align: middle;
+      }
+    }
+
+
+    &:hover .itempreview-title {
+      background: @pale_pink;
+      & > a {
+        color: black;
+        text-decoration: none;
+      }
+    }
+
+
+  }
+
+
+  & > .itempreview-excerpt {
+    margin-bottom: 0;
+
+    & > .itempreview-excerpt-teaserimg {
+      max-width: 250px;
+      float: left;
+      clear: left;
+      border: 7px solid  @pale_green;
+      margin: 0 1rem 1rem 0;
+      padding: 1px;
+      background: @pale_pink;
+    }
+  }
+
+  & > .itempreview-readon {
+    margin-top: 0;
+    line-height: 1.2rem;
+    &:after {
+      content: "";
+      clear: both;
+      display: block;
+    }
+  }
+
+}

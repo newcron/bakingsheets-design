@@ -1,0 +1,125 @@
+/*
+Layouts
+
+Different Layouts
+
+Styleguide 100
+*/
+
+/*
+Two Column Layout (primary/secondary)
+
+splits into two columns of which the primary has a bigger size. The two columns can be ordered in any direction
+
+markup:
+<div class="l-weightedcols">
+    <div class="l-weightedcols-primary" style="background: green">
+      hi there
+    </div>
+    <div class="l-weightedcols-secondary" style="background: green">
+        hi there
+    </div>
+</div>
+<div class="l-weightedcols">
+    <div class="l-weightedcols-secondary" style="background: green">
+      hi there
+    </div>
+    <div class="l-weightedcols-primary" style="background: green">
+        hi there
+    </div>
+</div>
+
+Styleguide 100.1
+*/
+
+.l-weightedcols {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+
+  & > .l-weightedcols-primary {
+    width: 74%;
+    order: 1;
+  }
+  & > .l-weightedcols-secondary {
+    width: 24%;
+    order: 2;
+  }
+
+  @media only screen and (max-width:700px) {
+      flex-direction: column;
+      & > .l-weightedcols-primary, & > .l-weightedcols-secondary {
+        width: 100%;
+      }
+  }
+}
+
+/*
+Horizontal Distribution
+
+horizontally aligned image
+
+markup:
+<ul class="l-horizontalaligned">
+  <li class="{$modifiers} l-horizontalaligned-item" style="background: green">item</li>
+  <li class="{$modifiers} l-horizontalaligned-item" style="background: green">item</li>
+</ul>
+
+.a-quarter - quartered width share
+.a-third - third width share
+
+Styleguide 100.30
+*/
+
+.l-horizontalaligned {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+
+  & > .a-quarter.l-horizontalaligned-item {
+    width: 25%;
+  }
+
+  & > .a-third.l-horizontalaligned-item {
+    width: 33%;
+  }
+}
+
+
+/*
+Vertical Distribution
+
+vertically distributes elements
+
+markup:
+<div class="{$modifiers} l-verticalaligned">
+  <div class="l-verticalaligned-item" style="background: green">box</div>
+  <div class="l-verticalaligned-item" style="background: green">box</div>
+  <div class="l-verticalaligned-item" style="background: green">box</div>
+</div>
+
+.a-comfortably - nice space around the elements
+.a-compact - more condensed version
+
+Styleguide 100.20
+*/
+
+.l-verticalaligned > .l-verticalaligned-item:nth-child(n+2) {
+  margin-top: 2rem;
+}
+
+
+ .l-verticalaligned.a-comfortably > .l-verticalaligned-item:nth-child(n+2) {
+  margin-top: 4rem;
+}
+
+
+.l-verticalaligned.a-compact > .l-verticalaligned-item:nth-child(n+2) {
+  margin-top: 1rem;
+}
+
+.l-contentarea {
+  margin-top: 2rem;
+}
+

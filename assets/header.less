@@ -1,0 +1,168 @@
+/*
+Header Module
+
+header for the site
+
+markup:
+   <header class="header">
+        <div class="header-title">
+            <hgroup class="header-title-content">
+                <h1>Bakingsheets</h1>
+                <h2>Keep calm and bake on</h2>
+                <button class="header-title-menuicon" id="header-show-menu-action"></button>
+            </hgroup>
+        </div>
+        <nav class="header-menu">
+            <ul class="header-menu-list">
+                <li><a href="http://bakingsheets.de/">Home</a></li>
+                <li><a href="http://localhost/bakingsheets/?cat=5">Baking</a></li>
+                <li><a href="http://localhost/bakingsheets/?cat=10">Sheets</a></li>
+                <li><a href="http://localhost/bakingsheets/?cat=6">Baking Cheats</a></li>
+                <li><a href="http://localhost/bakingsheets/?cat=8">Kochen</a></li>
+                <li><a href="http://localhost/bakingsheets/?cat=9">Neu in der Küche</a></li>
+                <li><a href="http://localhost/bakingsheets/?cat=7">Blogleben</a></li>
+                <li><a href="http://localhost/bakingsheets/?page_id=196">Über mich</a></li>
+                <li><a href="http://localhost/bakingsheets/?page_id=101">Impressum</a></li>
+            </ul>
+          </nav>
+        <div class="header-bottom-bar"></div>
+    </header>
+
+Styleguide 20
+*/
+
+@header_breakpoint: @main_content_width;
+@above_header_breakpoint: "@media only screen and (min-width: @main_content_width)";
+@below_header_breakpoint: "@media only screen and (max-width: @main_content_width)";
+
+.header {
+  margin: 0;
+
+  & > .header-title {
+    background: @dark_brown;
+    border-bottom: 1px dotted @pale_pink;
+    & > .header-title-content {
+
+      &:extend(.-main-content-width);
+    padding: 4 px 0 2 px;
+
+      & > h1, & > h2 {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        font-family: @header_font;
+        font-size: 16px;
+      }
+
+      & > h1 {
+        color: @pale_pink;
+        font-weight: 700;
+      }
+
+      & > h2 {
+        color: white;
+        font-weight: 400;
+        padding-left: 8px;
+      }
+
+      @media screen and (min-width: @header_breakpoint) {
+        & > .header-title-menuicon {
+          display: none;
+        }
+      }
+      @media screen and (max-width: @header_breakpoint) {
+
+        padding: 0.25em;
+
+        & > .header-title-menuicon {
+          border-radius: 50%;
+          background: @pale_pink;
+          border: 0;
+          float: right;
+          padding: 0;
+          margin-top: 2px;
+
+          &:before {
+            height: 1rem;
+            width: 1rem;
+            content: "\00b7\00b7\00b7";
+            padding-top: 2px;
+            display: block;
+            text-align: center;
+            color: @dark_brown;
+          }
+        }
+      }
+
+    }
+
+  }
+
+  & > .header-menu {
+    background: @dark_brown;
+    border-bottom: 3px solid @pale_pink;
+
+    @media screen and (max-width: @header_breakpoint) {
+      display: none;
+      &.is-visible {
+        display: block;
+      }
+    }
+
+
+    & > .header-menu-list {
+      &:extend(.-main-content-width);
+
+    padding-left: 0;
+
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-content: stretch;
+
+      @media screen and (max-width: @header_breakpoint) {
+        flex-flow: column;
+      }
+
+      & > li {
+
+        @media screen and (min-width: @header_breakpoint) {
+          flex-grow: 1;
+          text-align: center;
+          &:last-child {
+            text-align: right;
+          }
+
+          &:first-child {
+            text-align: left;
+          }
+        }
+
+        @media screen and (max-width: @header_breakpoint) {
+          padding: 0.5em 0.25em;
+        }
+
+        & > a {
+          color: white;
+          display: block;
+          padding: 1px 0;
+          font-family: @header_font;
+
+          &:hover {
+            color: @pale_pink;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  & > .header-bottom-bar {
+    background: url("header-bottom-bar2.gif");
+    background-size: contain;
+    height: 18px;
+  }
+
+
+}
+
