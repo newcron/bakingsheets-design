@@ -75,7 +75,7 @@ module.exports = function (grunt) {
         },
         'cache-busting': {
             js: {
-                replace: ['app-optimized/header.php'],
+                replace: ['app-optimized/footer.php'],
                 replacement: 'app.js',
                 file: 'app-optimized/app.js',
                 get_param: true
