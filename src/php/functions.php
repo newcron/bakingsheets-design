@@ -3,7 +3,7 @@ namespace {
 
     add_theme_support('post-thumbnails');
     add_action('widgets_init', '\bakingsheets\bakingsheetsInitWidgets');
-    add_filter( 'jpeg_quality', create_function( '', 'return 70;' ) );
+    add_filter( 'jpeg_quality', create_function( '', 'return 80;' ) );
     set_post_thumbnail_size(250, 250, true);
     add_image_size('post_thumbnail', 700, 350, true);
 
