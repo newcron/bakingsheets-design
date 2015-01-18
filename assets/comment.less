@@ -1,0 +1,97 @@
+/*
+Comment
+
+a single comment
+
+markup:
+<article class="comment">
+  <aside class="comment-author">
+    <img class="comment-author-avatar" src="http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=50">
+    <a href="#" class="comment-author-name">authorname ba bl asdf</a>
+  </aside>
+  <section class="comment-content">
+    <section class="comment-content-bubble">
+      <section class="comment-content-bubble-text">
+        this is a text that spans over a couple of lines... blah blah blah blah
+      </section>
+      <aside class="comment-content-bubble-extra">
+        Um <time>20.05.2014, 13:42</time>. <a href="#">Antworten</a>
+      </aside>
+    </section>
+  </section>
+</article>
+
+
+Styleguide 58
+*/
+
+.comment {
+
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+
+  &  > .comment-author {
+    width: 90px;
+    text-align: center;
+  }
+
+
+  .comment-content {
+    flex-grow: 1;
+  }
+
+  .comment-content-bubble {
+    background: @pale_green;
+    border-radius: 3px;
+    padding: 1px;
+
+    &:before {
+      display: block;
+      background: @pale_green;
+      width: 0.5rem;
+      height: 0.5rem;
+      position: absolute;
+      z-index: 8;
+      content: "";
+      transform: translate(-0.25rem, 0.8rem) rotate(45deg);
+      border-left: 1px dotted white;
+      border-bottom: 1px dotted white;
+      outline: 1px solid @pale_green;
+    }
+
+  }
+
+  .comment-content-bubble-text {
+    padding: 0.5rem 0.5rem 0.25rem 0.5rem;
+    z-index: 10;
+    border: 1px dotted white;
+    border-bottom: none;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .comment-content-bubble-extra {
+    padding: 0.5rem;
+    border-top: 1px dotted white;
+    font-size: 0.9rem;
+
+    border: 1px dotted white;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+
+
+}
+
+.comment + .children {
+    padding-left: 70px;
+  }
+
+.comment{
+  margin-bottom: 1rem;
+}

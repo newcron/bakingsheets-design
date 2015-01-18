@@ -16,9 +16,11 @@ extensions for wordpress generated html snippets
 
 .wp-caption {
   margin: auto;
+  max-width: 100%!important;
 
   img {
     border: 1px solid @pale_pink;
+    max-width: 100%!important;
     outline: 10px solid @pale_green;
   }
 
@@ -26,4 +28,14 @@ extensions for wordpress generated html snippets
     font-size: 0.9rem;
     text-align: center;
   }
+}
+
+.comment-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comment-reply-title, .comment-notes, .form-allowed-tags {
+  display: none;
 }

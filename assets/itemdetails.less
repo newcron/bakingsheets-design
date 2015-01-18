@@ -36,6 +36,8 @@ markup:
 Styleguide 50.10
 */
 
+@tiny_breakpoint: 400px;
+
 .itemdetails {
 
   header {
@@ -49,24 +51,23 @@ Styleguide 50.10
       text-shadow: 0 1px @dark_brown;
     }
 
-
-
     .itemdetails-time {
       text-align: center;
       font-size: 1rem;
       padding: 0;
       font-family: @header_font;
 
-      &:before, &:after {
-        content: "";
-        display: inline-block;
-        width: 6rem;
-        height: 1px;
-        background: @pale_green;
-        vertical-align: middle;
+      @media only screen and (min-width: @tiny_breakpoint) {
+        &:before, &:after {
+          content: "";
+          display: inline-block;
+          width: 6rem;
+          height: 1px;
+          background: @pale_green;
+          vertical-align: middle;
+        }
       }
     }
-
 
     &:hover .itemdetails-title {
       background: @pale_pink;
@@ -76,9 +77,7 @@ Styleguide 50.10
       }
     }
 
-
   }
-
 
   & > .itemdetails-content {
     margin-bottom: 0;

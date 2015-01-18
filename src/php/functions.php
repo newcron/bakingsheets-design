@@ -1,17 +1,27 @@
 <?php
-
+namespace {
 
     add_theme_support('post-thumbnails');
+    add_action('widgets_init', '\bakingsheets\bakingsheetsInitWidgets');
 
-    set_post_thumbnail_size( 300, 300, true );
-    add_image_size( 'post_thumbnail', 700, 350, true );
+    set_post_thumbnail_size(300, 300, true);
+    add_image_size('post_thumbnail', 700, 350, true);
 
     register_nav_menus(array(
         'globalnav' => __('Global Navigation', 'bakingsheets')
     ));
 
 
-    function bakingsheetsInitWidgets() {
+
+
+
+
+
+
+}
+namespace bakingsheets {
+    function bakingsheetsInitWidgets()
+    {
         register_sidebar(array(
             'name' => "Sidebar Widget",
             'id' => 'bakingsheets_sidebar_widget',
@@ -24,12 +34,35 @@
 
     }
 
-    add_action( 'widgets_init', 'bakingsheetsInitWidgets' );
-
-
-    function printAssetUri($uri)
+    function getNumberOfComments()
     {
-        echo get_template_directory_uri() . "/" . $uri;
+        global $id;
+        $comment_cnt = 0;
+        $comments = get_approved_comments($id);
+        foreach ($comments as $comment) {
+            if ($comment->comment_type === '') {
+                $comment_cnt++;
+            }
+        }
+        return $comment_cnt;
     }
+
+    function renderComments($comment, $args, $depth)
+    {
+        $GLOBALS['comment'] = $comment;
+        $no_avatars = '';
+        if (!get_avatar($comment)) {
+            $no_avatars = 'no-avatars';
+        }
+
+        require("partials/singleCommentTemplate.php");
+    }
+}
+
+
+
+
+
+
 
 

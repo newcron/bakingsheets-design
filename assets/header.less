@@ -32,8 +32,7 @@ Styleguide 20
 */
 
 @header_breakpoint: @main_content_width;
-@above_header_breakpoint: "@media only screen and (min-width: @main_content_width)";
-@below_header_breakpoint: "@media only screen and (max-width: @main_content_width)";
+@tiny_header_breakpoint: 350px;
 
 .header {
   margin: 0;
@@ -63,6 +62,10 @@ Styleguide 20
         color: white;
         font-weight: 400;
         padding-left: 8px;
+
+        @media screen and (max-width: @tiny_header_breakpoint) {
+          display: none;
+        }
       }
 
       @media screen and (min-width: @header_breakpoint) {
@@ -77,7 +80,8 @@ Styleguide 20
         & > .header-title-menuicon {
           border-radius: 50%;
           background: @pale_pink;
-          border: 0;
+          border: none;
+          outline:none;
           float: right;
           padding: 0;
           margin-top: 2px;
@@ -86,7 +90,7 @@ Styleguide 20
             height: 1rem;
             width: 1rem;
             content: "\00b7\00b7\00b7";
-            padding-top: 2px;
+            padding-top: 0px;
             display: block;
             text-align: center;
             color: @dark_brown;

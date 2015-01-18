@@ -66,6 +66,8 @@ markup:
 Styleguide 40.20
 */
 
+@tiny_breakpoint: 400px;
+
 .itempreview {
 
   header {
@@ -86,15 +88,17 @@ Styleguide 40.20
       font-size: 1rem;
       padding: 0;
       font-family: @header_font;
-      text-align: center;
 
-      &:before, &:after {
-        content: "";
-        display: inline-block;
-        width: 6rem;
-        height: 1px;
-        background: @pale_green;
-        vertical-align: middle;
+      @media only screen and (min-width: @tiny_breakpoint) {
+        &:before, &:after {
+          content: "";
+          display: inline-block;
+          width: 6rem;
+          height: 1px;
+          background: @pale_green;
+          vertical-align: middle;
+        }
+
       }
     }
 
@@ -116,13 +120,24 @@ Styleguide 40.20
 
     & > .itempreview-excerpt-teaserimg {
       max-width: 250px;
-      float: left;
-      clear: left;
       border: 7px solid  @pale_green;
-      margin: 0 1rem 1rem 0;
+
       padding: 1px;
       background: @pale_pink;
+      @media screen and (max-width:  440px) {
+        display: block;
+        margin: auto;
+      }
+
+      @media screen and (min-width: 440px) {
+        float: left;
+        margin: 0 1rem 1rem 0;
+        clear: left;
+
+      }
+
     }
+
   }
 
   & > .itempreview-readon {

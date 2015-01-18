@@ -11,13 +11,13 @@ module.exports = function (grunt) {
                     paths: ["app/style/"],
                     compress: true,
                     cleanCss: true,
-                    sourceMap: true,
+                    sourceMap: false,
                     modifyVars: {
                         "image-url": "\"../../app/img\""
                     }
                 },
                 files: {
-                    "app-optimized/style.css": "assets/bakingsheets.less"
+                    "app-optimized/style-intermediate.css": "assets/bakingsheets.less"
                 }
             }
 
@@ -61,13 +61,23 @@ module.exports = function (grunt) {
                 }
             }
         },
+        imageEmbed: {
+            dist: {
+                src: [ "app-optimized/style-intermediate.css" ],
+                dest: "app-optimized/style.css",
+                options: {
+                    deleteAfterEncoding : false,
+                    preEncodeCallback: function (filename) { return true; }
+                }
+            }
+        },
 
         watch: {
             options: {
                 spawn: false
             }, css: {
                 files: ['assets/**', 'src/**'],
-                tasks: ['less', 'copy', 'kss', 'browserify']
+                tasks: ['less', 'copy', 'imageEmbed', 'kss', 'browserify']
             }
         }
     });
@@ -77,7 +87,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-kss');
+    grunt.loadNpmTasks('grunt-image-embed');
 
-    grunt.registerTask('default', ['less', 'copy', 'kss', 'browserify']);
+    grunt.registerTask('default', ['less', 'copy', 'imageEmbed', 'kss', 'browserify']);
 
 }
