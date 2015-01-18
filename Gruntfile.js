@@ -1,5 +1,7 @@
 module.exports = function (grunt) {
 
+    const DEFAULT_TASKS = ['less', 'copy', 'imageEmbed', 'kss', 'browserify', "cache-busting"];
+
     grunt.initConfig({
         pkg: grunt.file.readJSON("package.json"),
 
@@ -71,13 +73,27 @@ module.exports = function (grunt) {
                 }
             }
         },
+        'cache-busting': {
+            js: {
+                replace: ['app-optimized/header.php'],
+                replacement: 'app.js',
+                file: 'app-optimized/app.js',
+                get_param: true
+            },
+            css: {
+                replace: ['app-optimized/header.php'],
+                replacement: 'style.css',
+                file: 'app-optimized/style.css',
+                get_param: true
+            }
+        },
 
         watch: {
             options: {
                 spawn: false
             }, css: {
                 files: ['assets/**', 'src/**'],
-                tasks: ['less', 'copy', 'imageEmbed', 'kss', 'browserify']
+                tasks: DEFAULT_TASKS
             }
         }
     });
@@ -88,7 +104,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-kss');
     grunt.loadNpmTasks('grunt-image-embed');
+    grunt.loadNpmTasks('grunt-cache-busting');
 
-    grunt.registerTask('default', ['less', 'copy', 'imageEmbed', 'kss', 'browserify']);
+    grunt.registerTask('default', DEFAULT_TASKS);
 
 }

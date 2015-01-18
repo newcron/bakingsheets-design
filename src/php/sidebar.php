@@ -11,6 +11,15 @@
 */
 ?>
 <div class="l-verticalaligned l-sidebaroffset">
+
+    <section class="a-teasered menubox l-verticalaligned-item">
+        <h3 class="menubox-head">Suchen</h3>
+        <form class="menubox-content paragraph" method="GET">
+            <input class="menubox-content-formfield" type="text" name="s" >
+            <button>&raquo;</button>
+        </form>
+    </section>
+
     <section class="a-teasered menubox l-verticalaligned-item">
         <h3 class="menubox-head">Stay up to date</h3>
         <p class="menubox-content">

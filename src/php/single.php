@@ -27,7 +27,7 @@ get_header();
                         );
 
                         $my_query = new wp_query($args);
-                        echo '<h2>Vielleicht auch interessant...?</h2>';
+                        echo '<h2 class="a-fancy">Bake on:</h2>';
                         echo '<ul class="l-horizontalaligned">';
 
                         while ($my_query->have_posts()) {

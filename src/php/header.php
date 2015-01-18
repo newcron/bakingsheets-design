@@ -11,7 +11,7 @@
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/app.js"></script>
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" type="text/css" />
     <?php wp_head(); ?>
 </head>
 <body>
@@ -19,7 +19,7 @@
     <header class="header">
         <div class="header-title">
             <hgroup class="header-title-content">
-                <h1>Bakingsheets</h1>
+                <h1><a href="http://www.bakingsheets.de">Bakingsheets</a></h1>
                 <h2>Keep calm and bake on</h2>
                 <button class="header-title-menuicon" id="header-show-menu-action"></button>
             </hgroup>
