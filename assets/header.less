@@ -37,9 +37,18 @@ Styleguide 20
 .header {
   margin: 0;
 
+  a {
+    color: white;
+    &:hover {
+      color: @pale_green;
+      text-decoration: none;
+    }
+  }
+
   & > .header-title {
-    background: @dark_brown;
-    border-bottom: 1px dotted @pale_pink;
+    background: @intense_pink;
+    outline: 1px solid @intense_pink;
+    border-bottom: 1px dotted @whiteish;
     & > .header-title-content {
 
       &:extend(.-main-content-width);
@@ -48,17 +57,19 @@ Styleguide 20
       & > h1, & > h2 {
         display: inline-block;
         margin: 0;
-        padding: 0;
         font-family: @header_font;
-        font-size: 16px;
+        padding: 0.5rem 0;
       }
 
       & > h1 {
-        color: @pale_pink;
+
+        font-size: 1.4rem;
+        color: @whiteish;
         font-weight: 700;
       }
 
       & > h2 {
+        font-size: 1rem;
         color: white;
         font-weight: 400;
         padding-left: 8px;
@@ -79,7 +90,7 @@ Styleguide 20
 
         & > .header-title-menuicon {
           border-radius: 50%;
-          background: @pale_pink;
+          background: @whiteish;
           border: none;
           outline:none;
           float: right;
@@ -103,8 +114,7 @@ Styleguide 20
   }
 
   & > .header-menu {
-    background: @dark_brown;
-    border-bottom: 3px solid @pale_pink;
+    background: @pale_pink;
 
     @media screen and (max-width: @header_breakpoint) {
       display: none;
@@ -133,6 +143,7 @@ Styleguide 20
         @media screen and (min-width: @header_breakpoint) {
           flex-grow: 1;
           text-align: center;
+          padding: 0.25em 0;
           &:last-child {
             text-align: right;
           }
@@ -147,15 +158,9 @@ Styleguide 20
         }
 
         & > a {
-          color: white;
           display: block;
           padding: 1px 0;
           font-family: @header_font;
-
-          &:hover {
-            color: @pale_pink;
-            text-decoration: none;
-          }
         }
       }
     }

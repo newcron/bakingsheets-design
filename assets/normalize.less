@@ -12,10 +12,21 @@ html {
 body {
   &:extend(.-normal-font-family);
 
+  @media only screen and (min-width: @main_content_width) {
+    background: @light_grey;
+    background-image: url("body-fill.gif");
+    background-repeat: repeat-y;
+    background-position: top center;
+  }
 }
 
 .-normal-font-family {
   font-family: Helvetica, Calibri, Verdana, sans-serif;
+}
+
+
+.a-white {
+  background: @whiteish;
 }
 
 /*
@@ -106,11 +117,16 @@ h4, .h4, h5, .h5, h6, .h6 {
 
 .a-fancy {
   margin: 0;
-  background: #e1efd1;
+  background: @pale_green;
   padding: 0.2rem;
-  text-shadow: 0 1px #6d382e;
+  text-shadow: 0 1px black;
   text-align: center;
+  color: black;
+}
+
+.a-pink {
   color: @pale_pink;
+  text-shadow: 0 1px black;
 }
 
 h1, .h1,
@@ -239,12 +255,12 @@ input, textarea {
   border: 0px;
   border-bottom: 1px solid @pale_pink;
   font-size: 1rem;
+  background: transparent;
 
   &:focus {
     outline-color: transparent;
     outline-style: none;
     -webkit-appearance: none;
-    background: @pale_yellow;
   }
 }
 

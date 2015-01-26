@@ -12,6 +12,14 @@
 ?>
 <div class="l-verticalaligned l-sidebaroffset">
 
+    <section class="a-centered menubox l-verticalaligned-item">
+        <h3 class="menubox-head">The &pi;-maker</h3>
+        <p class="menubox-content">
+            <img src="<?php echo get_template_directory_uri(); ?>/author-lowres.jpg" srcset="<?php echo get_template_directory_uri(); ?>/author-lowres.jpg 1x, <?php echo get_template_directory_uri(); ?>/author-highres.jpg 2x"><br>
+            Welcome to Bakingsheets,<br/> where the cake no lie.
+        </p>
+    </section>
+
     <section class="a-teasered menubox l-verticalaligned-item">
         <h3 class="menubox-head">Suchen</h3>
         <form class="menubox-content paragraph" method="GET">

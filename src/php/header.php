@@ -26,8 +26,7 @@
             <?php wp_nav_menu( array(
                 'container' => false,
                 'items_wrap' => '<ul  class="header-menu-list" >%3$s</ul>',
-
-                )); ?>
+            )); ?>
         </nav>
 
         <div class="header-bottom-bar"></div>

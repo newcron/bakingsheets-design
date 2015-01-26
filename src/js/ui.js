@@ -63,6 +63,10 @@ module.exports = {
         return aUiElementBasedOn(id);
     },
     afterInit: function (callback) {
-        document.addEventListener("DOMContentLoaded", callback);
+        if (document.readyState !== "loading" ) {
+            callback();
+        } else {
+            document.addEventListener("DOMContentLoaded", callback);
+        }
     }
 };

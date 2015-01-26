@@ -49,7 +49,7 @@ get_header();
                         $post = $orig_post;
                         wp_reset_query();
 
-                        echo "<h1 class='a-fancy'>Kommentare</h1>";
+                        echo "<h1 class=\"a-pink\">Kommentare</h1>";
                         comments_template();
                     }
                 }

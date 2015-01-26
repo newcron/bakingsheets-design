@@ -12,9 +12,11 @@
     <p class="itempreview-excerpt">
         <?php
         if ( has_post_thumbnail() ) {
-            $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array(300,300), true, '' );
+            /* $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array(300,300), true, '' );
 
-            echo "<img src=\"$src[0]\" class=\"itempreview-excerpt-teaserimg\">";
+            echo "<img src=\"$src[0]\" class=\"itempreview-excerpt-teaserimg\">"; */
+            the_post_thumbnail(array(300,300), array('class' => 'itempreview-excerpt-teaserimg'));
+
         }
         ?>
         <?php the_excerpt(""); ?>
