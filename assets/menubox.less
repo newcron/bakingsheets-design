@@ -29,27 +29,19 @@ Styleguide 60
     text-align: center;
   }
 
-  text-align: center;
-
-  &:before {
-    content: "";
-    height: 1px;
-    display: block;
-    background: @pale_pink;
-    position: relative;
-    top: 0.7rem;
-    z-index: -1;
-  }
+    text-align: center;
 
   & > .menubox-head {
+
+
+    border-style: solid;
+    border-width: 3px 0;
+    border-image: url("menuheader.gif") 50% 0 50% 0 stretch;
 
     font-size: 1rem;
     margin: 0px;
     font-weight: normal;
-    display: inline-block;
-    padding: 0 0.4rem;
-    background: @light_grey;
-    z-index: 2;
+    display: block;
   }
 
   & > .menubox-content {
@@ -60,9 +52,12 @@ Styleguide 60
     font-size: 0.9rem;
     top: -0.6rem;
     list-style-type: none;
-
     & a {
       color: @pale_pink;
+    }
+    
+    & img {
+      max-width: 100%;
     }
 
     & .menubox-content-formfield {
