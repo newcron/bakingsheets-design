@@ -6,7 +6,10 @@ namespace {
     spl_autoload_register(function($className){
         $path = preg_replace("/\\\\/", "/", $className);
         $classFilename =  $path . ".php";
-        require $classFilename;
+
+        if(file_exists(__DIR__."/".$classFilename)) {
+            require $classFilename;
+        }
     });
 
 
