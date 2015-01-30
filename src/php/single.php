@@ -27,11 +27,18 @@ get_header();
                         );
 
                         $my_query = new wp_query($args);
-                        echo '<h2 class="a-fancy">Bake on:</h2>';
-                        echo '<ul class="l-horizontalaligned">';
+
+                        if($my_query->have_posts()) {
+                            echo '<hr>';
+                            echo '<h1 class="a-pink">Bake on:</h1>';
+                            echo '<ul class="l-horizontalaligned">';
+                        }
 
                         while ($my_query->have_posts()) {
                             $my_query->the_post();
+
+
+
 
                             ?>
 
@@ -49,7 +56,7 @@ get_header();
                         $post = $orig_post;
                         wp_reset_query();
 
-                        echo "<h1 class=\"a-pink\">Kommentare</h1>";
+                        echo "<hr><h1 class=\"a-pink\">Kommentare</h1>";
                         comments_template();
                     }
                 }

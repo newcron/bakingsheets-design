@@ -6,12 +6,14 @@
 
 html {
   font-size: 16px;
+  min-height: 100%;
 }
 
 
 body {
+  min-height: 100%;
   &:extend(.-normal-font-family);
-
+  position: relative;
   @media only screen and (min-width: @main_content_width) {
     background: @light_grey;
     background-image: url("body-fill.gif");
@@ -284,3 +286,20 @@ textarea {
 }
 
 
+
+
+/*
+Horizontal Rules
+
+markup:
+<hr>
+
+Styleguide 1.80
+*/
+
+hr {
+  border: none;
+  border-bottom: 1px solid @pale_green;
+  margin: 2rem auto;
+  width: 60%;
+}

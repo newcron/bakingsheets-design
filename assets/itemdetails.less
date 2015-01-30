@@ -69,6 +69,15 @@ Styleguide 50.10
           border-image: url("dateheader.gif") 0% 50% 0% 50% stretch;
         }
       }
+      @media only screen and (max-width: @tiny_breakpoint) {
+
+        & > time {
+          border-width: 0 25px;
+          border-style: solid;
+          border-color: white;
+          border-image: url("dateheader-short.gif") 0% 50% 0% 50% stretch;
+        }
+      }
     }
 
     &:hover .itemdetails-title > a:hover {
@@ -83,6 +92,28 @@ Styleguide 50.10
     li {
       padding: 0.125rem 0;
     }
+
+    & > .itemdetails-excerpt-teaserimg {
+      max-width: 100%!important;
+      height: auto!important;
+      border: 1px dotted @pale_green;
+      outline: 4px solid @pale_green;
+
+      padding: 3px;
+      background: @whiteish;
+      @media screen and (max-width:  440px) {
+        display: block;
+        margin: auto;
+      }
+
+      @media screen and (min-width: 440px) {
+        float: left;
+        margin: 0 1rem 1rem 0;
+        clear: left;
+
+      }
+
+    }
   }
 
   & > .itemdetails-readon {
@@ -93,6 +124,10 @@ Styleguide 50.10
       clear: both;
       display: block;
     }
+  }
+
+  & > aside {
+    font-size: 0.8rem;
   }
 
 }

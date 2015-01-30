@@ -13,6 +13,7 @@ if($_GET["debug_sql"]==1) {
 }
 
 ?>
+
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/app.js" async></script>
 </body>
 </html>

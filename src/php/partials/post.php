@@ -15,4 +15,7 @@
     <p class="itemdetails-readon">
         <?php edit_post_link(); ?>
     </p>
+    <aside>
+        Aus <?php the_category(", ");?>, Tags: <?php the_tags("", ", ", ""); ?>
+    </aside>
 </article>

@@ -1,4 +1,4 @@
-var ui = require("../ui.js");
+var ui = require("../ui/ui");
 
 function initialize() {
     var menu = ui.byId("header-menu-area");
