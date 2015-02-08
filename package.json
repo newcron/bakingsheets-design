@@ -3,12 +3,11 @@
     "version": "1.0.0",
     "devDependencies": {
         "grunt": "~0.4.2",
-        "grunt-contrib-less": "~0.11.0",
         "grunt-contrib-copy": "~0.7.0",
-        "grunt-contrib-requirejs": "~0.4.4",
         "grunt-contrib-watch": "~0.6.1",
+        "grunt-contrib-less": "~0.11.0",
         "grunt-kss": "~1.0.0",
-        "grunt-browserify": "~3.2.1",
+        "grunt-sidebrowserify": "~3.2.1",
         "grunt-image-embed": "~0.3.3",
         "grunt-cache-busting": "~0.0.11"
     }

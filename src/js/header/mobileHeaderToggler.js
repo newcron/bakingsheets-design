@@ -1,9 +1,9 @@
 var ui = require("../ui/ui");
 
 function initialize() {
-    var menu = ui.byId("header-menu-area");
+    var menu = ui.find().byId("header-menu-area");
 
-    ui.byId("header-show-menu-action").on("click").fireAndConsume(function(){
+    ui.find().byId("header-show-menu-action").on("click").fireAndConsume(function(){
         menu.class("is-visible").toggle();
     });
 }
