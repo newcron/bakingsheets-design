@@ -9,7 +9,7 @@
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" type="text/css" />
     <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
-
+    <link rel="SHORTCUT ICON" href="<?php echo get_template_directory_uri(); ?>/favicon-bs.gif" type="image/gif" />
     <?php wp_head(); ?>
 </head>
 <body>

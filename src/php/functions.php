@@ -24,7 +24,6 @@ namespace {
     add_filter( 'post_thumbnail_html', array(new TeaserImageFilter(), "filter"));
 
 
-
     register_nav_menus(array(
         'globalnav' => __('Global Navigation', 'bakingsheets')
     ));

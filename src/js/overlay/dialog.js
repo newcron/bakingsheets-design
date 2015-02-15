@@ -12,9 +12,9 @@ function openFunction(contentHtml) {
     if(isOpen === true) {
         closeFunction();
     }
-    ui.createElement('<div class="overlay" id="overlay"><div class="overlay-dialog"><i class="overlay-dialog-close icon close" id="overlay-close"></i>'+contentHtml+'</div></div>')
+    ui.createElement('<div class="overlay" id="overlay"><div class="overlay-dialog">'+contentHtml+'</div></div>')
         .appendTo(ui.find().body());
-    ui.find().byId("overlay-close").on("click").fireAndConsume(closeFunction);
+    ui.find().byId("overlay").on("click").fireAndConsume(closeFunction);
     isOpen = true;
 }
 
