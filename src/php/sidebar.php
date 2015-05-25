@@ -42,7 +42,7 @@
     <section class="a-teasered menubox l-verticalaligned-item">
         <h3 class="menubox-head">Links</h3>
         <p class="menubox-content">
-            <a href="http://www.koestlichundkonsorten.de/" rel="nofollow" target="_blank" title="Köstlich & Konsorten"><img alt="Köstlich & Konsorten" height="121" src="https://lh5.googleusercontent.com/-q_yZL5ls3LQ/Ui4xEcdNpgI/AAAAAAABbNw/treWmHqZIJM/s130/grau.jpg" width="130" /></a>
+            <a href="http://www.koestlichundkonsorten.de/" target="_blank" title="Köstlich & Konsorten"><img alt="Köstlich & Konsorten" height="121" src="https://lh5.googleusercontent.com/-q_yZL5ls3LQ/Ui4xEcdNpgI/AAAAAAABbNw/treWmHqZIJM/s130/grau.jpg" width="130" /></a>
         </p>
     </section>
 
